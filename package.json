@@ -1,7 +1,7 @@
 {
   "name": "express_and_sequelize_practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "![logo](https://user-images.githubusercontent.com/44912347/202296600-c5f247d6-9616-49db-88f0-38433429d781.jpg)",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -17,5 +17,6 @@
     "path": "^0.12.7",
     "sequelize": "^6.21.4",
     "sqlite3": "^5.0.11"
-  }
+  },
+  "devDependencies": {}
 }
