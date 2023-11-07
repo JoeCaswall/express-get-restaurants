@@ -17,11 +17,26 @@ app.get("/restaurants/:id", async (req, res) => {
 });
 
 app.use(express.json());
-// app.use(express.urlencoded());
+app.use(express.urlencoded());
 
 app.post("/restaurants", async (req, res) => {
   const newRestaurant = await Restaurant.create(req.body);
   res.json(newRestaurant);
+});
+
+app.put("/restaurants/:id", async (req, res) => {
+  await Restaurant.update(req.body, {
+    where: { id: req.params.id },
+  });
+  const allRestauarants = await Restaurant.findAll();
+  res.json(allRestauarants);
+});
+
+app.delete("/restaurants/:id", async (req, res) => {
+  const deletedRestaurant = Restaurant.destroy({
+    where: { id: req.params.id },
+  });
+  res.json(deletedRestaurant);
 });
 
 module.exports = app;
