@@ -16,4 +16,12 @@ app.get("/restaurants/:id", async (req, res) => {
   res.json(particularRestaurant);
 });
 
+app.use(express.json());
+// app.use(express.urlencoded());
+
+app.post("/restaurants", async (req, res) => {
+  const newRestaurant = await Restaurant.create(req.body);
+  res.json(newRestaurant);
+});
+
 module.exports = app;
